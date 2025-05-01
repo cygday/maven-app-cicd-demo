@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker image build -t mylocaltomcat:"$BUILD_NUMBER" .
+docker image build -t my-tomcat:"$BUILD_NUMBER" .
