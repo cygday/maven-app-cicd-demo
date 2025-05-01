@@ -6,8 +6,10 @@ pipeline {
 stages{
         stage('Build') {
             steps {
-                sh 'mvn -f maven-app-cicd-demo/pom.xml install -DskipTests'
-            }
+                dir('maven-app-cicd-demo'){
+                    sh 'mvn -f maven-app-cicd-demo/pom.xml install -DskipTests'
+                    }
+                }    
             post {
                 success {
                     echo 'Now Archiving it...'
