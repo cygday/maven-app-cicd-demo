@@ -6,11 +6,12 @@ pipeline {
 stages{
         stage('Build') {
             steps {
+                dir('maven-app-cicd-demo'){
                     sh '''pwd && ls -l
                         docker build -t my-tomcat:"$BUILD_NUMBER" .
                         '''
                     sh 'mvn -f maven-app-cicd-demo/pom.xml install -DskipTests'
-                    
+                     }
                 }    
             post {
                 success {
