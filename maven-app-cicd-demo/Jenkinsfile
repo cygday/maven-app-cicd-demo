@@ -8,7 +8,6 @@ stages{
             steps {
                 dir('maven-app-cicd-demo'){
                     sh '''
-                        cd maven-app-cicd-demo
                         docker build -t my-tomcat:"$BUILD_NUMBER" .
                         '''
                     sh 'mvn -f maven-app-cicd-demo/pom.xml install -DskipTests'
